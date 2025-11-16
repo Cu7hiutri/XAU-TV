@@ -1,68 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>XAU-TV — SRC Monitor</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-  <!-- TradingView widget library (public) -->
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XAU-TV Realtime Board</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
-    <header>
-      <h1>XAU-TV · SRC Live Monitor</h1>
-      <div class="meta">
-        <div>Repo: <strong>XAU-TV</strong></div>
-        <div id="now">--:--:--</div>
-      </div>
-    </header>
 
-    <main>
-      <section class="charts">
-        <div class="chart-card">
-          <h2>CFD / XAUUSD (TV feed)</h2>
-          <div id="tv_cfd" class="tv-chart"></div>
+    <div class="header">
+        <h1>XAU-TV REALTIME FEED</h1>
+        <p>CFD • GC1 FUTURES • SPOT PROXY</p>
+    </div>
+
+    <div class="widget-block">
+        <h2>CFD — XAUUSD (TVC:GOLD)</h2>
+        <div class="tradingview">
+            <iframe 
+                src="https://s.tradingview.com/widgetembed/?frameElementId=gold_cfd&symbol=TVC%3AGOLD&interval=1&hidesidetoolbar=1&hidetoptoolbar=1&theme=dark&style=1&timezone=Asia%2FBangkok"
+                width="100%" height="380" frameborder="0">
+            </iframe>
         </div>
+    </div>
 
-        <div class="chart-card">
-          <h2>GC1 Futures (proxy)</h2>
-          <div id="tv_gc1" class="tv-chart"></div>
+    <div class="widget-block">
+        <h2>GC1 FUTURES — COMEX GC1!</h2>
+        <div class="tradingview">
+            <iframe 
+                src="https://s.tradingview.com/widgetembed/?frameElementId=gc1&symbol=COMEX%3AGC1%21&interval=1&hidesidetoolbar=1&hidetoptoolbar=1&theme=dark&style=1&timezone=Asia%2FBangkok"
+                width="100%" height="380" frameborder="0">
+            </iframe>
         </div>
+    </div>
 
-        <div class="chart-card small">
-          <h2>Quick Numbers</h2>
-          <div class="numbers">
-            <div>CFD: <span id="cfd_val">--</span></div>
-            <div>GC1: <span id="gc1_val">--</span></div>
-            <div>SpotProxy: <span id="spot_val">--</span></div>
-            <div>Spread: <span id="spread_val">--</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="assistant">
-        <div class="panel">
-          <h3>SRC Assistant (live notes)</h3>
-          <div id="alerts">Waiting for feed...</div>
-        </div>
-
-        <div class="panel">
-          <h3>Phase / Zones</h3>
-          <div class="zones">
-            <div>Phase: <span id="phase">—</span></div>
-            <div>No-trade zone: <span id="no_trade">—</span></div>
-            <div>Threshold: <span id="threshold">—</span></div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <small>Prototype · Use only public TV feeds. For private broker feed / execution monitoring you must add backend integration.</small>
-    </footer>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
